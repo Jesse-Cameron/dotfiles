@@ -21,7 +21,7 @@ export ZSH="/home/jesse/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -109,20 +109,6 @@ zinit light-mode for \
     zinit-zsh/z-a-as-monitor \
     zinit-zsh/z-a-patch-dl \
     zinit-zsh/z-a-bin-gem-node \
-    zsh-users/zsh-autosuggestions \
-    zdharma/fast-syntax-highlighting \
-    akarzim/zsh-docker-aliases \
-    lukechilds/zsh-nvm \
-    lukechilds/zsh-better-npm-completion
-
-zinit light romkatv/powerlevel10k
-
-zinit snippet OMZP::git
-zinit snippet OMZP::vscode
-zinit snippet OMZP::tmux
-zinit snippet OMZP::npm
-zinit snippet OMZP::fzf
-zinit snippet OMZP::ubuntu
 
 TYPEWRITTEN_CURSOR="block"
 
@@ -130,3 +116,26 @@ TYPEWRITTEN_CURSOR="block"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export NVM_COMPLETION=true
+export NVM_LAZY_LOAD=true
+zinit light-mode for \
+    romkatv/powerlevel10k \
+    zsh-users/zsh-autosuggestions \
+    zdharma/fast-syntax-highlighting \
+    akarzim/zsh-docker-aliases \
+    lukechilds/zsh-nvm \
+    lukechilds/zsh-better-npm-completion
+
+zinit for \
+    OMZP::git \
+    OMZP::vscode \
+    OMZP::tmux \
+    OMZP::npm \
+    OMZP::fzf \
+    OMZP::docker-compose \
+    OMZP::tmux \
+    OMZP::ubuntu
+
+zinit ice as"completion"
+zinit snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_docker
