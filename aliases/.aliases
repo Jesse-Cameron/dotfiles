@@ -1,0 +1,27 @@
+# brew
+
+alias bwi='brew install'
+alias bw='brew'
+alias bwu='brew update && brew upgrade'
+alias bwd='brew doctor'
+alias bws='brew services'
+
+# travis
+
+alias tv='travis'
+alias tvh='travis history'
+
+# directories
+
+alias cdz='cd ~/dev/Github/zendesk'
+
+# git
+
+alias gswm='git switch $(git default-branch)'
+
+# tmux
+
+alias tls='tmux ls'
+alias tkas='tmux kill-session -a'
+alias tkad='tmux list-sessions | grep -v attached | cut -d: -f1 |  xargs -t -n1 tmux kill-session -t'
+alias t='tmux'
