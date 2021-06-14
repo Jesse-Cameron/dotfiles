@@ -131,6 +131,7 @@ zinit for \
     OMZP::git \
     OMZP::vscode \
     OMZP::tmux \
+    OMZP::golang \
     OMZP::npm \
     OMZP::fzf \
     OMZP::docker-compose \
@@ -142,3 +143,13 @@ zinit snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_
 
 # alias
 source ~/.aliases
+
+# OS Specifics
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    # linux
+    export PATH=$PATH:/usr/local/go/bin
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    # Mac OSX
+else
+    # Unknown.
+fi
