@@ -6,11 +6,6 @@ alias bwu='brew update && brew upgrade'
 alias bwd='brew doctor'
 alias bws='brew services'
 
-# travis
-
-alias tv='travis'
-alias tvh='travis history'
-
 # directories
 
 alias cdz='cd ~/dev/Github/zendesk'
@@ -26,3 +21,7 @@ alias tkas='tmux kill-session -a'
 alias tkad='tmux list-sessions | grep -v attached | cut -d: -f1 |  xargs -t -n1 tmux kill-session -t'
 alias t='tmux'
 alias tssh='ssh [your server] -t "tmux -CC attach || tmux -CC"'
+
+# docker
+
+alias dksa='docker kill $(docker ps -q)'
