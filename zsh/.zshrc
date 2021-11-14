@@ -147,7 +147,7 @@ source ~/.aliases
 # OS Specifics
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # linux
-    export PATH=$PATH:/usr/local/go/bin
+    export PATH=$PATH:/home/jesse/go/bin:/usr/local/go/bin
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
 else
