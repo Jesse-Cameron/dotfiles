@@ -14,6 +14,10 @@ alias cdz='cd ~/dev/Github/zendesk'
 
 alias gswm='git switch $(git default-branch)'
 
+# sublime merge
+
+alias smg='smerge -n .'
+
 # tmux
 
 alias tls='tmux ls'
