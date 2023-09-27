@@ -15,7 +15,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/jesse/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -86,7 +86,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # PATH
-
+export PATH=$PATH:$HOME/bin
 export PATH=$PATH:~/.local/bin
 
 ### Added by Zinit's installer
@@ -147,7 +147,7 @@ source ~/.aliases
 # OS Specifics
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # linux
-    export PATH=$PATH:/home/jesse/go/bin:/usr/local/go/bin
+    export PATH=$PATH:$HOME/go/bin:/usr/local/go/bin
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
 else
