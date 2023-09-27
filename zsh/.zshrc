@@ -1,6 +1,14 @@
+export PATH=$PATH:~/.scripts
+
 # Start a tmux session if possible
+# ensure that scripts has ,tmux-first-unattached-session in it
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-	exec $(tmux attach -t `,tmux-first-unattached-session` 2> /dev/null || tmux)
+    session=$(,tmux-first-unattached-session)
+    if [ -z "$session" ]; then
+        exec $(tmux)
+    else
+        exec $(tmux attach -t $session)
+    fi
 fi
 
 
