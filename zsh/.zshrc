@@ -127,7 +127,10 @@ TYPEWRITTEN_CURSOR="block"
 
 export NVM_COMPLETION=true
 export NVM_LAZY_LOAD=true
+# fzf-tab needs to be loaded before zsh-autosuggestions and 
+# fast-syntax-highlighting
 zinit light-mode for \
+    Aloxaf/fzf-tab \
     romkatv/powerlevel10k \
     zsh-users/zsh-autosuggestions \
     zdharma-continuum/fast-syntax-highlighting \
@@ -136,6 +139,7 @@ zinit light-mode for \
     lukechilds/zsh-better-npm-completion
 
 zinit for \
+    OMZP::asdf \
     OMZP::git \
     OMZP::vscode \
     OMZP::tmux \
