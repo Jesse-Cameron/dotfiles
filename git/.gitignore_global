@@ -43,8 +43,14 @@ Thumbs.db
 .bsp/
 project/**/metals.sbt
 
+
+# MAC #
+#######
+Brewfile.lock.json
+
 # IDE #
 #######
 .idea/
 .vscode/
 tmp/
+.solargraph.yml
