@@ -52,5 +52,6 @@ Brewfile.lock.json
 #######
 .idea/
 .vscode/
+*.code-workspace
 tmp/
 .solargraph.yml
