@@ -125,8 +125,6 @@ TYPEWRITTEN_CURSOR="block"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export NVM_COMPLETION=true
-export NVM_LAZY_LOAD=true
 # fzf-tab needs to be loaded before zsh-autosuggestions and 
 # fast-syntax-highlighting
 zinit light-mode for \
@@ -134,9 +132,7 @@ zinit light-mode for \
     romkatv/powerlevel10k \
     zsh-users/zsh-autosuggestions \
     zdharma-continuum/fast-syntax-highlighting \
-    akarzim/zsh-docker-aliases \
-    lukechilds/zsh-nvm \
-    lukechilds/zsh-better-npm-completion
+    akarzim/zsh-docker-aliases
 
 zinit for \
     OMZP::asdf \
