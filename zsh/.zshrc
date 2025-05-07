@@ -160,7 +160,6 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     export PATH=$PATH:$HOME/go/bin:/usr/local/go/bin
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     # Mac OSX
-    export PATH="/Applications/Sublime Merge.app/Contents/SharedSupport/bin:$PATH"
 else
     # Unknown.
 fi
