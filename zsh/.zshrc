@@ -137,6 +137,8 @@ zinit light-mode for \
 zinit for \
     OMZP::asdf \
     OMZP::git \
+    OMZP::gh \
+    OMZP::rust \
     OMZP::vscode \
     OMZP::tmux \
     OMZP::golang \
