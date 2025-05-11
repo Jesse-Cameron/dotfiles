@@ -1,6 +1,7 @@
 [user]
 	name = Jesse-Cameron
 	email = jessec.cameron@gmail.com
+	signingkey = ~/.ssh/signing_ed25519.pub
 [core]
 	excludesfile = ~/.gitignore_global
 [url "ssh://git@github.com/"]
@@ -14,9 +15,14 @@
 	default-branch = "!git symbolic-ref refs/remotes/origin/HEAD | cut -f4 -d/"
 [gpg]
 	format = ssh
+[gpg.ssh]
+	allowedsignersfile=~/.config/git/allowed_signers
 [commit]
 	gpgsign = true
 [tag]
 	gpgsign = true
 [init]
 	defaultBranch = main
+[includeif "gitdir:~/dev/personal/"]
+	path = ~/dev/personal/.gitconfig
+
