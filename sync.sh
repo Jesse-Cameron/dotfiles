@@ -11,3 +11,4 @@ if [ ! -d "$HOME"/.scripts ]; then
 fi
 stow -v --target="$HOME"/.scripts scripts  
 stow -v --adopt zsh
+stow -vv--adopt --target="$HOME"/.config/ghostty/ ghostty
