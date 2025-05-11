@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # brew
 
 alias bwi='brew install'
@@ -5,10 +7,6 @@ alias bw='brew'
 alias bwu='brew update && brew upgrade'
 alias bwd='brew doctor'
 alias bws='brew services'
-
-# directories
-
-alias cdz='cd ~/dev/Github/zendesk'
 
 # git
 
