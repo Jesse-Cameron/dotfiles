@@ -154,6 +154,29 @@ zinit snippet https://github.com/docker/cli/blob/master/contrib/completion/zsh/_
 # alias
 source ~/.aliases
 
+# function
+function ghpr {
+	[[ ! "$(git rev-parse --is-inside-work-tree)" ]] && return 1
+	GH_COMMAND='gh pr list --state open --json number,author,additions,deletions,updatedAt,title --template "
+	{{- tablerow (\"PR\" | color \"blue+b\") (\"LAST UPDATE\" | color \"blue+b\") (\"AUTHOR\" | color \"blue+b\") \"\" \"\" (\"TITLE\" | color \"blue+b\") -}}
+	{{- range . -}}
+		{{- tablerow (printf \"#%v\" .number | color \"green+h\") (timeago .updatedAt | color \"gray+h\") (.author.login | color \"cyan+h\") (printf \"+%v\" .additions | color \"green\") (printf \"-%v\" .deletions | color \"red\") .title -}}
+	{{- end -}}" --search'
+	FZF_DEFAULT_COMMAND="$GH_COMMAND ${1:-\"\"}" \
+		GH_FORCE_TTY=100% fzf --ansi --disabled --no-multi --header-lines=1 \
+		--header $'ENTER - Checkout | CTRL+B - Browser | CTRL+D - Toggle Diff  | CTRL+S - Toggle Status \nCTRL+E - Edit    | CTRL+F - Toggle Info  | CTRL+Y - Comment' --header-border line\
+		--prompt 'Search Open PRs >' --preview-window hidden:wrap \
+		--layout=reverse --info=inline --no-multi \
+		--bind "change:reload:sleep 0.25; $GH_COMMAND {q} || true" \
+		--bind 'ctrl-b:execute-silent(gh pr view {1} --web)' \
+		--bind 'ctrl-d:toggle-preview+change-preview(gh pr diff {1} --color always)' \
+		--bind 'ctrl-f:toggle-preview+change-preview(gh pr view {1} --comments)' \
+        --bind 'ctrl-s:toggle-preview+change-preview(gh pr checks {1} --watch)' \
+		--bind 'ctrl-e:execute(gh pr edit {1})+accept' \
+		--bind 'enter:execute(gh pr checkout {1})+accept-non-empty' \
+		--bind 'ctrl-y:execute(gh pr comment {1})+accept'
+}
+
 # OS Specifics
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # linux

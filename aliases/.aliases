@@ -12,6 +12,10 @@ alias bws='brew services'
 
 alias gswm='git switch $(git default-branch)'
 
+# github
+
+alias ghprvw='gh pr view --web'
+
 # sublime merge
 
 alias smg='smerge -n .'
