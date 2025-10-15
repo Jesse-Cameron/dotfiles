@@ -135,7 +135,6 @@ zinit light-mode for \
     akarzim/zsh-docker-aliases
 
 zinit for \
-    OMZP::asdf \
     OMZP::git \
     OMZP::gh \
     OMZP::rust \
