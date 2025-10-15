@@ -2,14 +2,14 @@ export PATH=$PATH:~/.scripts
 
 # Start a tmux session if possible
 # ensure that scripts has ,tmux-first-unattached-session in it
-if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-    session=$(,tmux-first-unattached-session)
-    if [ -z "$session" ]; then
-        exec $(tmux)
-    else
-        exec $(tmux attach -t $session)
-    fi
-fi
+# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+#     session=$(,tmux-first-unattached-session)
+#     if [ -z "$session" ]; then
+#         exec $(tmux)
+#     else
+#         exec $(tmux attach -t $session)
+#     fi
+# fi
 
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
